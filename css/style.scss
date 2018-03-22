@@ -19,24 +19,165 @@
     @include font-face("lato Regular", "../fonts/Lato-Regular.ttf")
 }
 
+@font-face {
+    @include font-face("lato Bold", "../fonts/Lato-Bold.ttf")
+}
+
+@font-face {
+    @include font-face("lato Italic", "../fonts/Lato-Italic.ttf")
+}
+
 // 2. Base
 html {
-font-family: "Lato Regular", "AdobeInvisFont", "MyriadPro-Regular";
+@include font(normal, normal, 400, 62.5%, normal, "Lato Regular");
 font-size: 62.5%;
 color: $pure-white;
-text-align: left;
+}
+
+h2 {
+font-family: "Lato Bold";
+font-size: 3.9rem;
+@extend %to-uppercase;
+}
+
+p {
+    font-family: "Lato Regular";
+    font-size: 2.4rem;
+    margin: 0;
 }
 
 ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 // 3. Layout
 header {
     background-color: $pure-white;
+    grid-area: "header";
+}
+
+.container {
+    display: grid;
+    grid-template: $container-mobile;
+    overflow-x: hidden;
+}
+
+main {
+    grid-area: "main";
+    @extend %text-center;
 }
 // 4. Block + element
+.header__logo {
+    border-bottom: 2px solid $lighthole-gray;
 
+}
+
+.header__logo-image {
+    margin: 40px auto 37px 67px;
+}
+
+.navbar {
+    color: $hell-black;
+    font-size: 1.4rem;
+    @extend %to-uppercase;
+    @extend %flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 150px;
+    margin: 30px auto auto 67px;
+}
+
+.navbar__item {
+    @extend %pointer;
+    position: relative;
+}
+
+.content {
+
+}
+.content__details {
+    background-color: $sea-blue;
+    padding: 80px 3% 80px 3%;
+}
+
+.content__schema {
+    background-color: $sky-blue;
+    padding: 80px 3% 80px 3%;
+}
+
+.content__schema-left {
+    border-bottom: 2px solid $heaven-blue;
+    @extend %relative;
+}
+
+.content__schema-left::after {
+    content: "";
+    @extend %absolute;
+    width: 10px;
+    height: 10px;
+    background: $heaven-blue;
+    top: calc(100% - 4px);
+    left: calc(100% - 10px);
+}
+
+footer {
+    background-color: $hole-black;
+}
+
+.footer__nav {
+    font-size: 1.4rem;
+    padding: 0;
+    margin: 0 auto;
+    @extend %flex;
+    @extend %to-uppercase;
+    max-width: 408px;
+    justify-content: space-between;
+}
+
+.footer__nav-item {
+    padding: 0 10px 0 0;
+    @extend %pointer;
+}
+
+.footer__nav-item:not(:last-child) {
+    border-right: 2px solid $pure-white;
+}
 // 5. Modifier
 // 6. State
+.cl-effect-1::before,
+.cl-effect-1::after {
+	display: inline-block;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+.cl-effect-1::before {
+	margin-right: 10px;
+	content: '[';
+	-webkit-transform: translateX(20px);
+	-moz-transform: translateX(20px);
+	transform: translateX(20px);
+}
+
+.cl-effect-1::after {
+	margin-left: 10px;
+	content: ']';
+	-webkit-transform: translateX(-20px);
+	-moz-transform: translateX(-20px);
+	transform: translateX(-20px);
+}
+
+.cl-effect-1:hover::before,
+.cl-effect-1:hover::after,
+.cl-effect-1:focus::before,
+.cl-effect-1:focus::after {
+	opacity: 1;
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+}
 // 7. Animations

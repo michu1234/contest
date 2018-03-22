@@ -30,6 +30,7 @@ $sea-blue: #469da7;
 $sky-blue: #62acb4;
 $heaven-blue: #97d1d7;
 $hole-black: #36393a;
+$lighthole-gray: #d7d7d7;
 $hell-black: #0a040a;
 $pure-white: #ffffff;
  
@@ -37,9 +38,8 @@ $pure-white: #ffffff;
 
  
 
-$grid-template_mobile: "sum" auto 
-                       "info" auto 
-                       "payments" auto / auto;
+$container-mobile:     "header" 400px
+                       "main" auto / auto;
 $grid-template_tablet: "info sum" minmax(auto, 500px)
                        "payments ." auto / 2fr 1fr;
 
@@ -59,8 +59,12 @@ $screen: "(min-width: 1424px)";
   text-transform: uppercase;
 }
 
-%position-absolute {
+%absolute {
   position: absolute;
+}
+
+%relative {
+  position: relative;
 }
 
 %display-inline-block {
