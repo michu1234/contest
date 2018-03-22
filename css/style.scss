@@ -1,3 +1,42 @@
-p {
-    color: red;
+@import 'helpers';
+
+
+/* Table of contents
+=====================
+// 1. Font Faces
+// 2. Base
+// 3. Layout
+// 4. Block + element
+// 5. Modifier
+// 6. State
+// 7. Animations
+=====================
+*/
+
+
+// 1. Font Faces
+@font-face {
+    @include font-face("lato Regular", "../fonts/Lato-Regular.ttf")
 }
+
+// 2. Base
+html {
+font-family: "Lato Regular", "AdobeInvisFont", "MyriadPro-Regular";
+font-size: 62.5%;
+color: $pure-white;
+text-align: left;
+}
+
+ul {
+    list-style: none;
+}
+
+// 3. Layout
+header {
+    background-color: $pure-white;
+}
+// 4. Block + element
+
+// 5. Modifier
+// 6. State
+// 7. Animations

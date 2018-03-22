@@ -1,3 +1,39 @@
-p {
-  color: red;
+/* Table of contents
+=====================
+// 1. Variables
+// 2. Placeholders
+// 3. Functions
+// 4. Mixins
+// 10. Animations
+=====================
+*/
+/* Table of contents
+=====================
+// 1. Font Faces
+// 2. Base
+// 3. Layout
+// 4. Block + element
+// 5. Modifier
+// 6. State
+// 7. Animations
+=====================
+*/
+@font-face {
+  font-family: "lato Regular";
+  src: url("../fonts/Lato-Regular.ttf");
+}
+
+html {
+  font-family: "Lato Regular", "AdobeInvisFont", "MyriadPro-Regular";
+  font-size: 62.5%;
+  color: #ffffff;
+  text-align: left;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  background-color: #ffffff;
 }
