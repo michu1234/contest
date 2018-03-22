@@ -32,6 +32,7 @@ html {
 @include font(normal, normal, 400, 62.5%, normal, "Lato Regular");
 font-size: 62.5%;
 color: $pure-white;
+user-select: none;
 }
 
 h2 {
@@ -56,6 +57,14 @@ ul {
 header {
     background-color: $pure-white;
     grid-area: "header";
+    @extend %flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+nav {
+    @extend %flex;
+    justify-content: center;
 }
 
 .container {
@@ -71,11 +80,25 @@ main {
 // 4. Block + element
 .header__logo {
     border-bottom: 2px solid $lighthole-gray;
-
+    @extend %flex;
+    justify-content: center;
 }
 
 .header__logo-image {
-    margin: 40px auto 37px 67px;
+    margin: 40px 0 37px 0;
+}
+.header__icon {
+    position: fixed;
+    right: 40px;
+    top: 10px;
+}
+.header__icon::after {
+    content: "#{map-get($icons, hamburger)}";
+    font-size: 3rem;
+    color: black;
+    z-index: 4;
+    @extend %absolute;
+    @extend %pointer;
 }
 
 .navbar {
@@ -85,8 +108,10 @@ main {
     @extend %flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 150px;
-    margin: 30px auto auto 67px;
+    margin: 30px 0 30px 0;
+    height: 150px;
+    text-align: center;
+    will-change: auto;
 }
 
 .navbar__item {
@@ -99,17 +124,18 @@ main {
 }
 .content__details {
     background-color: $sea-blue;
-    padding: 80px 3% 80px 3%;
+    padding: 40px 3% 70px 3%;
 }
 
 .content__schema {
     background-color: $sky-blue;
-    padding: 80px 3% 80px 3%;
+    padding: 30px 3% 80px 3%;
 }
 
-.content__schema-left {
+.content__schema-left, .content__schema-right {
     border-bottom: 2px solid $heaven-blue;
     @extend %relative;
+    padding: 40px 0 18px 0;
 }
 
 .content__schema-left::after {
@@ -122,30 +148,71 @@ main {
     left: calc(100% - 10px);
 }
 
+.content__schema-right::after {
+    content: "";
+    @extend %absolute;
+    width: 10px;
+    height: 10px;
+    background: $heaven-blue;
+    top: calc(100% - 4px);
+    right: calc(100% - 10px);
+}
+
+.content__schema-image {
+    padding: 80px 0 0 0;
+    @extend %relative;
+    min-height: 580px;
+    @extend %flex;
+    justify-content: center;
+}
+
+.content__schema-phone {
+    @extend %absolute;
+    z-index: 0;
+}
+.content__schema-screen {
+    @extend %absolute;
+    top: 136px;
+    z-index: 1;
+}
+
 footer {
     background-color: $hole-black;
+    text-align: center;
+    min-height: 200px;
+    @extend %flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 3%;
 }
 
 .footer__nav {
-    font-size: 1.4rem;
     padding: 0;
     margin: 0 auto;
     @extend %flex;
     @extend %to-uppercase;
     max-width: 408px;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .footer__nav-item {
-    padding: 0 10px 0 0;
+    font-size: 1.4rem;
+    padding: 0 7px 0 7px;
     @extend %pointer;
 }
 
 .footer__nav-item:not(:last-child) {
     border-right: 2px solid $pure-white;
 }
+
+.footer__slogan p {
+    font-size: 1.4rem;
+}
 // 5. Modifier
 // 6. State
+.is--closed {
+    animation: menuToggle .3s ease forwards;
+}
 .cl-effect-1::before,
 .cl-effect-1::after {
 	display: inline-block;
@@ -180,4 +247,18 @@ footer {
 	-moz-transform: translateX(0px);
 	transform: translateX(0px);
 }
+
 // 7. Animations
+@keyframes menuToggle {
+    0% {
+        height: 250px;
+        opacity: 1;
+    }
+
+    100% {
+        height: 0;
+        display: none;
+        opacity: 0;
+        padding: 0;
+    }
+}

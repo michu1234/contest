@@ -38,7 +38,7 @@ $pure-white: #ffffff;
 
  
 
-$container-mobile:     "header" 400px
+$container-mobile:     "header" auto
                        "main" auto / auto;
 $grid-template_tablet: "info sum" minmax(auto, 500px)
                        "payments ." auto / 2fr 1fr;
