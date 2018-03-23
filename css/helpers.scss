@@ -116,7 +116,7 @@ $screen: "(min-width: 1424px)";
 // 4. Mixins
 //   media queries
 @mixin large {
-    @media screen and (min-width: 60em) {
+    @media screen and (min-width: 80em) {
       @content;
     }
   }

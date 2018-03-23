@@ -72,15 +72,26 @@ nav {
     display: grid;
     grid-template: $container-mobile;
     overflow-x: hidden;
-    @media screen and (min-width: 600px){
+    @include medium {
         grid-template: "h m" auto
-                       "f f" auto / 1fr 2fr;
+                       "h m" auto / minmax(200px, 280px) 2fr;
+    }
+    @include large {
+        grid-template: "h m" auto
+                       "h m" auto / minmax(200px, 320px) 2fr;
     }
 }
 
 main {
     grid-area: "m";
     @extend %text-center;
+}
+
+.content {
+    @include large {
+        display: grid;
+        grid-template: "details schema" auto / minmax(200px, 533px) minmax(500px, 856px);
+    }
 }
 
 // 4. Block + element
@@ -96,7 +107,7 @@ main {
 
 .header__icon {
     position: absolute;
-    right: 40px;
+    right: 50px;
     top: 10px;
     z-index: 4;
 }
@@ -128,14 +139,30 @@ main {
     position: relative;
 }
 
+.contest__title {
+    margin-top: 20px;
+    @include medium {
+        margin-top: 20px;
+    }
+    @include large {
+        margin-top: 270px;
+    }
+}
+
 .content__details {
     background-color: $sea-blue;
     padding: 40px 3% 70px 3%;
+    grid-area: "details";
+    @include large {
+    text-align: left;
+    padding: 0 3% 70px 5%;
+    }
 }
 
 .content__schema {
     background-color: $sky-blue;
     padding: 30px 3% 80px 3%;
+    grid-area: "schema";
 }
 
 .content__schema-left, .content__schema-right {
@@ -208,29 +235,26 @@ main {
     z-index: 0;
     left: 0;
     top: 0;
-    @extend %absolute;
+    float: left;
+    margin-bottom: 40px;
+    margin-top: -30px;
 }
 
 .contest__CTA {
-    text-align: left;
-    @extend %absolute;
-    z-index: 2;
+    text-align: center;
+    min-height: 590px;
 }
 
 .contest__CTA-details {
-    max-width: 392px;
     height: 52px;
     color: $hole-black;
     font-size: 2.4rem;
     letter-spacing: 0.6px;
-    margin-top: 29px;
-    margin-bottom: 44px;
 }
 
 .contest__CTA-title {
     @extend %to-uppercase;
     color: $hole-black;
-    margin-bottom: 29px;
 }
 
 footer {
@@ -241,7 +265,6 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     padding: 20px 3%;
-    grid-area: "f";
 }
 
 .footer__nav {
@@ -273,12 +296,18 @@ footer {
     font-size: 1.8rem;
     @extend %to-uppercase;
     letter-spacing: 0.45px;
+    margin: 44px 0 64px 0;
+    outline: 0;
 }
 
 // 5. Modifier
 .btn--normal {
     width: 280px;
     height: 60px;
+}
+
+.text--italic {
+    font-family: "Lato Italic";
 }
 // 6. State
 .is--closed {
