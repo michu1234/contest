@@ -39,9 +39,9 @@ $pure-white: #ffffff;
  
 
 $container-mobile:     "header" auto
-                       "main" auto / auto;
-$grid-template_tablet: "info sum" minmax(auto, 500px)
-                       "payments ." auto / 2fr 1fr;
+                       "main" auto
+                       "footer" auto / auto;
+$container-tablet: "header main" 1fr / 1fr 1fr;
 
 $grid-template_desktop: "info sum" auto 
                         "payments ." auto / 2fr 1fr;
@@ -116,19 +116,19 @@ $screen: "(min-width: 1424px)";
 // 4. Mixins
 //   media queries
 @mixin large {
-    @media only screen and (max-width: 60em) {
+    @media screen and (min-width: 60em) {
       @content;
     }
   }
   
   @mixin medium {
-    @media only screen and (max-width: 40em) {
+    @media screen and (min-width: 45em) {
       @content;
     }
   }
   
   @mixin small {
-    @media only screen and (max-width: 30em) {
+    @media screen and (min-width: 39em) {
       @content;
     }
   }

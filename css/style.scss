@@ -33,6 +33,7 @@ html {
 font-size: 62.5%;
 color: $pure-white;
 user-select: none;
+max-width: 1600px;
 }
 
 h2 {
@@ -56,10 +57,10 @@ ul {
 // 3. Layout
 header {
     background-color: $pure-white;
-    grid-area: "header";
+    grid-area: "h";
     @extend %flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 nav {
@@ -71,12 +72,17 @@ nav {
     display: grid;
     grid-template: $container-mobile;
     overflow-x: hidden;
+    @media screen and (min-width: 600px){
+        grid-template: "h m" auto
+                       "f f" auto / 1fr 2fr;
+    }
 }
 
 main {
-    grid-area: "main";
+    grid-area: "m";
     @extend %text-center;
 }
+
 // 4. Block + element
 .header__logo {
     border-bottom: 2px solid $lighthole-gray;
@@ -87,11 +93,14 @@ main {
 .header__logo-image {
     margin: 40px 0 37px 0;
 }
+
 .header__icon {
-    position: fixed;
+    position: absolute;
     right: 40px;
     top: 10px;
+    z-index: 4;
 }
+
 .header__icon::after {
     content: "#{map-get($icons, hamburger)}";
     font-size: 3rem;
@@ -119,9 +128,6 @@ main {
     position: relative;
 }
 
-.content {
-
-}
 .content__details {
     background-color: $sea-blue;
     padding: 40px 3% 70px 3%;
@@ -160,7 +166,6 @@ main {
 
 .content__schema-image {
     padding: 80px 0 0 0;
-    @extend %relative;
     min-height: 580px;
     @extend %flex;
     justify-content: center;
@@ -170,10 +175,36 @@ main {
     @extend %absolute;
     z-index: 0;
 }
+
 .content__schema-screen {
     @extend %absolute;
-    top: 136px;
+    top: 56px;
+    left: 12px;
     z-index: 1;
+}
+
+.content__schema-product {
+    position: absolute;
+    z-index: 5;
+    top: 140px;
+    left: -60px;
+}
+
+.schema__container {
+    max-width: 265px;
+    @extend %relative;
+    margin-left: -240px;
+}
+// @mixin bg($color, $url, $repeat, $position){
+//     background: $color, url("#{$url}"), $repeat, $position;
+// }
+.contest {
+    @include bg($pure-white, "../img/ON_25_SJH6424 kopia@1X.jpg", no-repeat, cover);
+}
+
+.contest__image {
+    max-width: 100%;
+    height: auto;
 }
 
 footer {
@@ -184,6 +215,7 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     padding: 20px 3%;
+    grid-area: "f";
 }
 
 .footer__nav {
@@ -208,11 +240,13 @@ footer {
 .footer__slogan p {
     font-size: 1.4rem;
 }
+
 // 5. Modifier
 // 6. State
 .is--closed {
     animation: menuToggle .3s ease forwards;
 }
+
 .cl-effect-1::before,
 .cl-effect-1::after {
 	display: inline-block;

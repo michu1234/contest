@@ -3,7 +3,8 @@ let menu = document.querySelector(".navbar");
 let nav = document.querySelector("nav");
 
 
+
     menu_button.addEventListener("click", function() {
-        menu.classList.toggle("is--closed");
-        nav.classList.toggle("is--closed");
-    })
+            menu.classList.toggle("is--closed");
+            nav.classList.toggle("is--closed");
+    });
