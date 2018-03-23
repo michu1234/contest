@@ -33,7 +33,7 @@ html {
 font-size: 62.5%;
 color: $pure-white;
 user-select: none;
-max-width: 1600px;
+max-width: 1699px;
 }
 
 h2 {
@@ -78,7 +78,7 @@ nav {
     }
     @include large {
         grid-template: "h m" auto
-                       "h m" auto / minmax(200px, 320px) 2fr;
+                       "h m" auto / minmax(200px, 32 0px) 2fr;
     }
 }
 
@@ -90,7 +90,7 @@ main {
 .content {
     @include large {
         display: grid;
-        grid-template: "details schema" auto / minmax(200px, 533px) minmax(500px, 856px);
+        grid-template: "details schema" auto / minmax(200px, 533px) minmax(500px, 1067px);
     }
 }
 
@@ -145,7 +145,7 @@ main {
         margin-top: 20px;
     }
     @include large {
-        margin-top: 270px;
+        margin-top: 270px;  
     }
 }
 
@@ -163,6 +163,10 @@ main {
     background-color: $sky-blue;
     padding: 30px 3% 80px 3%;
     grid-area: "schema";
+}
+
+.content__schema p {
+    font-size: 2rem;
 }
 
 .content__schema-left, .content__schema-right {
@@ -265,6 +269,20 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     padding: 20px 3%;
+    @include large {
+        padding: 20px 0;
+        flex-direction: row;
+        justify-content: initial;
+        align-items: center;
+        min-height: 135px;
+        text-align: left;
+    }
+}
+
+.footer__logo {
+    @include large {
+        margin-left: 107px;
+    }
 }
 
 .footer__nav {
@@ -274,6 +292,10 @@ footer {
     @extend %to-uppercase;
     max-width: 408px;
     justify-content: space-around;
+    @include large {
+        margin-left: auto;
+        margin-right: 41px;
+    }
 }
 
 .footer__nav-item {
@@ -288,6 +310,8 @@ footer {
 
 .footer__slogan p {
     font-size: 1.4rem;
+    margin-left: 67px;
+    @extend %to-uppercase;
 }
 
 .btn {
@@ -320,7 +344,7 @@ footer {
 	opacity: 0;
 	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
 	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
-	transition: transform 0.3s, opacity 0.2s;
+	transition: transform 0.2s, opacity 0.2s;
 }
 
 .cl-effect-1::before {
