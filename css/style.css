@@ -12,15 +12,15 @@ main {
   text-align: center;
 }
 
-h2, .navbar, .footer__nav {
+h2, .navbar, .contest__CTA-title, .footer__nav, .btn {
   text-transform: uppercase;
 }
 
-.header__icon::after, .content__schema-left::after, .content__schema-right::after, .content__schema-phone, .content__schema-screen {
+.header__icon::after, .content__schema-left::after, .content__schema-right::after, .content__schema-phone, .content__schema-screen, .contest__image, .contest__CTA {
   position: absolute;
 }
 
-.content__schema-left, .content__schema-right, .schema__container {
+.content__schema-left, .content__schema-right, .schema__container, .contest {
   position: relative;
 }
 
@@ -209,13 +209,32 @@ main {
   margin-left: -240px;
 }
 
-.contest {
-  background: #ffffff, url("../img/ON_25_SJH6424 kopia@1X.jpg"), no-repeat, cover;
-}
-
 .contest__image {
   max-width: 100%;
   height: auto;
+  z-index: 0;
+  left: 0;
+  top: 0;
+}
+
+.contest__CTA {
+  text-align: left;
+  z-index: 2;
+}
+
+.contest__CTA-details {
+  max-width: 392px;
+  height: 52px;
+  color: #36393a;
+  font-size: 2.4rem;
+  letter-spacing: 0.6px;
+  margin-top: 29px;
+  margin-bottom: 44px;
+}
+
+.contest__CTA-title {
+  color: #36393a;
+  margin-bottom: 29px;
 }
 
 footer {
@@ -246,6 +265,18 @@ footer {
 
 .footer__slogan p {
   font-size: 1.4rem;
+}
+
+.btn {
+  background-color: #469da7;
+  color: #ffffff;
+  font-size: 1.8rem;
+  letter-spacing: 0.45px;
+}
+
+.btn--normal {
+  width: 280px;
+  height: 60px;
 }
 
 .is--closed {

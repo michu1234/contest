@@ -199,12 +199,38 @@ main {
 //     background: $color, url("#{$url}"), $repeat, $position;
 // }
 .contest {
-    @include bg($pure-white, "../img/ON_25_SJH6424 kopia@1X.jpg", no-repeat, cover);
+    @extend %relative;
 }
 
 .contest__image {
     max-width: 100%;
     height: auto;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    @extend %absolute;
+}
+
+.contest__CTA {
+    text-align: left;
+    @extend %absolute;
+    z-index: 2;
+}
+
+.contest__CTA-details {
+    max-width: 392px;
+    height: 52px;
+    color: $hole-black;
+    font-size: 2.4rem;
+    letter-spacing: 0.6px;
+    margin-top: 29px;
+    margin-bottom: 44px;
+}
+
+.contest__CTA-title {
+    @extend %to-uppercase;
+    color: $hole-black;
+    margin-bottom: 29px;
 }
 
 footer {
@@ -241,7 +267,19 @@ footer {
     font-size: 1.4rem;
 }
 
+.btn {
+    background-color: $sea-blue;
+    color: $pure-white;
+    font-size: 1.8rem;
+    @extend %to-uppercase;
+    letter-spacing: 0.45px;
+}
+
 // 5. Modifier
+.btn--normal {
+    width: 280px;
+    height: 60px;
+}
 // 6. State
 .is--closed {
     animation: menuToggle .3s ease forwards;
