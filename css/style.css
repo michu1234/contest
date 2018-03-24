@@ -179,6 +179,12 @@ nav {
   }
 }
 
+@media screen and (min-width: 1935px) {
+  .container .social {
+    display: none;
+  }
+}
+
 .container .social__facebook {
   width: 35px;
   height: 35px;
@@ -410,8 +416,14 @@ nav {
   z-index: 0;
   left: 0;
   top: 0;
-  margin-bottom: 40px;
   float: left;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 1695px) {
+  .container .contest__image {
+    margin-bottom: 0;
+  }
 }
 
 .container .contest__CTA {

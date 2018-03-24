@@ -137,6 +137,9 @@ main {
     @include small {
         display: none;
     }
+    @media screen and (min-width: 1935px){
+        display: none;
+    }
 }
 
 .social__facebook {
@@ -357,8 +360,12 @@ main {
     z-index: 0;
     left: 0;
     top: 0;
-    margin-bottom: 40px;
     float: left;
+    margin-bottom: 40px;
+    @include large {
+        margin-bottom: 0;
+    }
+
 }
 
 .contest__CTA {
