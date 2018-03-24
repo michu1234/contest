@@ -1,6 +1,7 @@
-let menu_button = document.querySelector(".header__icon");
-let menu = document.querySelector(".navbar");
-let nav = document.querySelector("nav");
+let menu_button = document.querySelector(".header__icon"),
+    menu = document.querySelector(".navbar"),
+    nav = document.querySelector("nav"),
+    social = document.querySelector(".social");
 
 
 

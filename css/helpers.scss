@@ -123,13 +123,13 @@ $screen: "(min-width: 1424px)";
   }
   
   @mixin medium {
-    @media screen and (min-width: 45em) {
+    @media screen and (min-width: 721px) {
       @content;
     }
   }
   
   @mixin small {
-    @media screen and (min-width: 39em) {
+    @media screen and (max-width: 720px) {
       @content;
     }
   }

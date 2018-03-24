@@ -80,10 +80,9 @@ nav {
     }
     @include large {
         grid-template: "h m" auto
-                       "h m" auto / minmax(200px, 32 0px) 2fr;
+                       "h m" auto / minmax(200px, 320px) 2fr;
         margin: 0 auto;
     }
-}
 
 main {
     grid-area: "m";
@@ -135,6 +134,9 @@ main {
     position: absolute;
     top: 0;
     right: 0;
+    @include small {
+        display: none;
+    }
 }
 
 .social__facebook {
@@ -157,9 +159,9 @@ main {
     @extend %flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 30px 0 30px 0;
+    margin: 30px 0 30px -30px;
     height: 150px;
-    text-align: center;
+    text-align: left;
     will-change: auto;
 }
 
@@ -169,9 +171,9 @@ main {
 }
 
 .contest__title {
-    margin-top: 20px;
+    margin: 20px 0 20px 0;
     @include medium {
-        margin-top: 20px;
+        margin-top: 60px;
     }
     @include large {
         margin: 270px 0 39px 108px; 
@@ -223,7 +225,6 @@ main {
     grid-area: "right";
     @include large {
         margin-top: 170px;
-        
     }
 }
 
@@ -545,4 +546,5 @@ footer {
         opacity: 0;
         padding: 0;
     }
+}
 }
