@@ -71,7 +71,6 @@ nav {
 }
 
 .container {
-    @extend %box-center;
     display: grid;
     grid-template: $container-mobile;
     overflow-x: hidden;
@@ -82,6 +81,7 @@ nav {
     @include large {
         grid-template: "h m" auto
                        "h m" auto / minmax(200px, 32 0px) 2fr;
+        margin: 0 auto;
     }
 }
 
@@ -130,6 +130,26 @@ main {
     @extend %pointer;
 }
 
+.social {
+    @extend %flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.social__facebook {
+    width: 35px; height: 35px;
+    background: url('../img/css_sprites.png') -10px -10px;
+    margin: 40px 14px 0 0;
+
+}
+
+.social__instagram {
+    width: 35px; height: 35px;
+    background: url('../img/css_sprites.png') -65px -10px;
+    margin: 40px 40px 0 0;
+}
+
 .navbar {
     color: $hell-black;
     font-size: 1.4rem;
@@ -160,15 +180,23 @@ main {
 
 .content__details {
     background-color: $sea-blue;
-    padding: 40px 3% 70px 3%;
+    padding: 40px 3% 50px 3%;
     grid-area: "details";
     @include large {
     text-align: left;
     padding: 0 3% 70px 5%;
     }
     p {
-        max-width: 325px;
-        margin-left: 108px;
+        text-align: center;
+        @include medium {
+            margin: 30px auto;
+            max-width: 325px;
+        }
+        @include large {
+            margin-left: 108px;
+            max-width: 325px;
+            text-align: left;
+        }
     }
 }
 
@@ -195,11 +223,15 @@ main {
     grid-area: "right";
     @include large {
         margin-top: 170px;
+        
     }
 }
 
 .content__schema p {
     font-size: 2rem;
+    @include medium {
+        font-size: 2.4rem;
+    }
 }
 
 .content__schema-left {
@@ -222,17 +254,17 @@ main {
 
 .content__schema-third {
     @include large {
+        display: flex;
+        margin-left: auto;
         max-width: 280px;
-        margin-right: 0;
-        padding-right: 0;
     }
 }
 
 .content__schema-fourth {
     @include large {
         max-width: 245px;
-        margin-right: 0;
-        padding-right: 0;
+        display: flex;
+        margin-left: auto;
     }
 }
 
@@ -306,9 +338,7 @@ main {
     @extend %relative;
     margin-left: -240px;
 }
-// @mixin bg($color, $url, $repeat, $position){
-//     background: $color, url("#{$url}"), $repeat, $position;
-// }
+
 .contest {
     @extend %relative;
 }
@@ -321,18 +351,21 @@ main {
 
 .contest__image {
     max-width: 1600px;
+    width: 100%;
     height: auto;
     z-index: 0;
     left: 0;
     top: 0;
-    float: left;
     margin-bottom: 40px;
-    margin-top: -30px;
+    float: left;
 }
 
 .contest__CTA {
     text-align: center;
-    min-height: 590px;
+    min-height: 500px;
+    @include medium {
+        min-height: 400px;
+    }
     @include large {
         position: absolute;
     }
@@ -343,6 +376,10 @@ main {
     color: $hole-black;
     font-size: 2.4rem;
     letter-spacing: 0.6px;
+    margin: 29px 0 44px 0;
+    @include medium {
+        margin: 29px 0 44px 0;
+    }
     @include large {
         text-align: left;
         margin: 29px 0 44px 108px;
@@ -353,7 +390,7 @@ main {
     @extend %to-uppercase;
     color: $hole-black;
     @include large {
-        margin: 108px 0 0 108px;
+        margin: 108px 0 0 50px;
     }
 }
 
@@ -385,10 +422,10 @@ footer {
 .footer__nav {
     padding: 0;
     margin: 0 auto;
+    max-width: 408px;
     @extend %flex;
     @extend %to-uppercase;
-    max-width: 408px;
-    justify-content: space-around;
+    justify-content: space-between;
     @include large {
         margin-left: auto;
         margin-right: 41px;
@@ -399,6 +436,8 @@ footer {
     font-size: 1.4rem;
     padding: 0 7px 0 7px;
     @extend %pointer;
+    @extend %flex;
+    align-items: center;
 }
 
 .footer__nav-item:not(:last-child) {
@@ -407,8 +446,12 @@ footer {
 
 .footer__slogan p {
     font-size: 1.4rem;
-    margin-left: 67px;
+    margin: 0 auto;
+    max-width: 460px;
     @extend %to-uppercase;
+    @include large {
+        margin-left: 67px;
+    }
 }
 
 .btn {
@@ -417,7 +460,7 @@ footer {
     font-size: 1.8rem;
     @extend %to-uppercase;
     letter-spacing: 0.45px;
-    margin: 44px 0 64px 0;
+    margin: 0 0 64px 0;
     outline: 0;
 }
 
@@ -433,6 +476,25 @@ footer {
 // 6. State
 .is--closed {
     animation: menuToggle .3s ease forwards;
+}
+
+.navbar__item:hover,
+.footer__nav-item:hover {
+    color: $rose-red;
+    @extend %transition;
+}
+
+.btn:hover {
+    background: $rose-red;
+    @extend %transition;
+    @extend %pointer;
+}
+
+.social__facebook:hover,
+.social__instagram:hover {
+    filter: drop-shadow(0 1px 10px $pure-white);
+    @extend %pointer;
+    @extend %transition;
 }
 
 .cl-effect-1::before,

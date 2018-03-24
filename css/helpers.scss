@@ -33,6 +33,7 @@ $hole-black: #36393a;
 $lighthole-gray: #d7d7d7;
 $hell-black: #0a040a;
 $pure-white: #ffffff;
+$rose-red: #e30613;
  
 
 
@@ -116,7 +117,7 @@ $screen: "(min-width: 1424px)";
 // 4. Mixins
 //   media queries
 @mixin large {
-    @media screen and (min-width: 80em) {
+    @media screen and (min-width: 1695px) {
       @content;
     }
   }
