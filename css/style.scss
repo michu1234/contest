@@ -30,6 +30,7 @@
 // 2. Base
 html {
 @include font(normal, normal, 400, 62.5%, normal, "Lato Regular");
+
 font-size: 62.5%;
 color: $pure-white;
 user-select: none;
@@ -246,13 +247,13 @@ main {
 
 .content__schema-first {
     @include large {
-        max-width: 220px;
+        max-width: 270px;
     }
 }
 
 .content__schema-second {
     @include large {
-        max-width: 218px;
+        max-width: 260px;
     }
 }
 
@@ -260,13 +261,13 @@ main {
     @include large {
         display: flex;
         margin-left: auto;
-        max-width: 280px;
+        max-width: 290px;
     }
 }
 
 .content__schema-fourth {
     @include large {
-        max-width: 245px;
+        max-width: 295px;
         display: flex;
         margin-left: auto;
     }

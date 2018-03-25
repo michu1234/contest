@@ -66,7 +66,7 @@ header, nav, .container .header__logo, .container .social, .container .navbar, .
 }
 
 html {
-  font: normal, normal, 400, 62.5%/normal, "Lato Regular", Arial, Helvetica, sans-serif;
+  font: normal normal 400 62.5%/normal "Lato Regular", Arial, Helvetica, sans-serif;
   font-size: 62.5%;
   color: #ffffff;
   user-select: none;
@@ -114,7 +114,7 @@ nav {
   }
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container {
     grid-template: "h m" auto "h m" auto/minmax(200px, 320px) 2fr;
     margin: 0 auto;
@@ -125,7 +125,7 @@ nav {
   grid-area: "m";
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .content {
     display: grid;
     grid-template: "details schema" auto/minmax(200px, 533px) minmax(500px, 1067px);
@@ -148,7 +148,7 @@ nav {
   z-index: 4;
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .header__icon {
     display: none;
   }
@@ -224,7 +224,7 @@ nav {
   }
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .contest__title {
     margin: 270px 0 39px 108px;
   }
@@ -236,7 +236,7 @@ nav {
   grid-area: "details";
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .content__details {
     text-align: left;
     padding: 0 3% 70px 5%;
@@ -254,7 +254,7 @@ nav {
   }
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .content__details p {
     margin-left: 108px;
     max-width: 325px;
@@ -268,7 +268,7 @@ nav {
   grid-area: "schema";
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .content__schema {
     display: grid;
     grid-template: "right image left" auto "right image left" auto / 1fr 1fr 1fr;
@@ -279,7 +279,7 @@ nav {
   grid-area: "left";
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .content__schema-l {
     margin-top: 200px;
   }
@@ -289,7 +289,7 @@ nav {
   grid-area: "right";
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .content__schema-r {
     margin-top: 170px;
   }
@@ -305,47 +305,47 @@ nav {
   }
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .content__schema-left {
     text-align: left;
   }
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .content__schema-first {
-    max-width: 220px;
+    max-width: 270px;
   }
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .content__schema-second {
-    max-width: 218px;
+    max-width: 260px;
   }
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .content__schema-third {
     display: flex;
     margin-left: auto;
-    max-width: 280px;
+    max-width: 290px;
   }
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .content__schema-fourth {
-    max-width: 245px;
+    max-width: 295px;
     display: flex;
     margin-left: auto;
   }
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .content__schema-right {
     text-align: right;
   }
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .content__schema-right:last-child {
     margin-top: 70px;
   }
@@ -420,7 +420,7 @@ nav {
   margin-bottom: 40px;
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .contest__image {
     margin-bottom: 0;
   }
@@ -437,7 +437,7 @@ nav {
   }
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .contest__CTA {
     position: absolute;
   }
@@ -457,7 +457,7 @@ nav {
   }
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .contest__CTA-details {
     text-align: left;
     margin: 29px 0 44px 108px;
@@ -468,7 +468,7 @@ nav {
   color: #36393a;
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .contest__CTA-title {
     margin: 108px 0 0 50px;
   }
@@ -484,7 +484,7 @@ nav {
   padding: 20px 3%;
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container footer {
     padding: 20px 0;
     flex-direction: row;
@@ -495,7 +495,7 @@ nav {
   }
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .footer__logo {
     margin-left: 107px;
   }
@@ -508,7 +508,7 @@ nav {
   justify-content: space-between;
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .footer__nav {
     margin-left: auto;
     margin-right: 41px;
@@ -531,7 +531,7 @@ nav {
   max-width: 460px;
 }
 
-@media screen and (min-width: 1695px) {
+@media screen and (min-width: 1833px) {
   .container .footer__slogan p {
     margin-left: 67px;
   }

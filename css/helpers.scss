@@ -117,7 +117,7 @@ $screen: "(min-width: 1424px)";
 // 4. Mixins
 //   media queries
 @mixin large {
-    @media screen and (min-width: 1695px) {
+    @media screen and (min-width: 1833px) {
       @content;
     }
   }
@@ -174,7 +174,7 @@ $screen: "(min-width: 1424px)";
 
 // font
 @mixin font($font-style, $font-variant, $font-weight, $font-size, $line-height, $font-family){
-    font: $font-style, $font-variant, $font-weight, #{$font-size}/#{$line-height}, "#{$font-family}", Arial, Helvetica, sans-serif;
+    font: $font-style $font-variant $font-weight #{$font-size}/#{$line-height} "#{$font-family}", Arial, Helvetica, sans-serif;
 }
 
 // background 
